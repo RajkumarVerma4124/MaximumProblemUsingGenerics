@@ -27,24 +27,21 @@ namespace MaximumProblemUsingGenerics
                     case 1:
                         //Finding maximum value out of three integer using generics(Ref1 & Ref2)
                         int fIntValue = 50, sIntValue = 20, tIntValue = 10;
-                        MaxNumber<int> intObj = new MaxNumber<int>(fIntValue, sIntValue, tIntValue);
-                        int resIntNum = intObj.ShowMaxValue(fIntValue, sIntValue, tIntValue);
+                        int resIntNum = new MaxNumber<int>(fIntValue, sIntValue, tIntValue).ShowMax();
                         Console.WriteLine("{0} is maximum value from first: {1} second: {2} third: {3}", resIntNum, fIntValue, sIntValue, tIntValue);
                         Console.ReadLine();
                         break;
                     case 2:
                         //Finding maximum value out of three float numbers using generics(Ref1 & Ref2)
                         float fstFtVal = 2.2f, secFtVal = 3.4f, tFtVal = 3.2f;
-                        MaxNumber<float> floatObj = new MaxNumber<float>(fstFtVal, secFtVal, tFtVal);
-                        float resFtNum = floatObj.ShowMaxValue(fstFtVal, secFtVal, tFtVal); 
+                        float resFtNum = new MaxNumber<float>(fstFtVal, secFtVal, tFtVal).ShowMax();
                         Console.WriteLine("{0} is maximum value from first: {1} second: {2} third: {3}", resFtNum, fstFtVal, secFtVal, tFtVal);
                         Console.ReadLine();
                         break;
                     case 3:
                         //Finding maximum value out of three string input using generics(Ref1 & Ref2)
                         string fstStr = "Airport", secStr = "Airplane", thirdStr = "Airspace";
-                        MaxNumber<string> stringObj = new MaxNumber<string>(fstStr, secStr, thirdStr);
-                        string resStr = stringObj.ShowMaxValue(fstStr, secStr, thirdStr);
+                        string resStr = new MaxNumber<string>(fstStr, secStr, thirdStr).ShowMax();
                         Console.WriteLine("{0} is maximum value from first: {1} second: {2} third: {3}", resStr, fstStr, secStr, thirdStr);
                         Console.ReadLine();
                         break;

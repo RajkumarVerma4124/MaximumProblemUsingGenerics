@@ -21,7 +21,7 @@ namespace MaximumProblemUsingGenerics
         }
 
         //Refactored all the 3 method to one generic method and finding the maximum values(Ref1)
-        public T ShowMaxValue(T firstValue, T secondValue, T thirdValue)
+        private static T ShowMaxValue(T firstValue, T secondValue, T thirdValue)
         {
             if (firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
@@ -37,5 +37,13 @@ namespace MaximumProblemUsingGenerics
             }
             return default;
         }
+
+        //Generic method to call max method which take three parameters
+        public T ShowMax()
+        {
+            T maxValue = MaxNumber<T>.ShowMaxValue(this.firstValue, this.secondValue, this.thirdValue);
+            return maxValue;
+        }
+
     }
 }
