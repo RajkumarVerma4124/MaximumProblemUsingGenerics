@@ -8,54 +8,18 @@ namespace MaximumProblemUsingGenerics
 {
     public class MaxNumber
     {
-        //Method to compare three integer numbers to get the maximum values(UC1)
-        public static int MaxIntNumThree(int firstValue, int secondValue, int thirdValue)
+        //Refactored all the 3 method to one generic method and finding the maximum values(Ref1)
+        public static T ShowMaxValue<T>(T firstValue, T secondValue, T thirdValue) where T : IComparable
         {
             if (firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
                 return firstValue;
             }
-            else if (secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) >= 0)
+            if (secondValue.CompareTo(thirdValue) >= 0 && secondValue.CompareTo(firstValue) >= 0)
             {
                 return secondValue;
             }
-            else if(thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) >= 0)
-            {
-                return thirdValue;
-            }
-            return default;
-        }
-
-        //Method to compare three float numbers to get the maximum values(UC2)
-        public static float MaxFloatNumThree(float firstValue, float secondValue, float thirdValue)
-        {
-            if (firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) >= 0)
-            {
-                return firstValue;
-            }
-            else if (secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) >= 0)
-            {
-                return secondValue;
-            }
-            else if (thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) >= 0)
-            {
-                return thirdValue;
-            }
-            return default;
-        }
-
-        //Method to compare three string input to get the maximum values(UC3)
-        public static string MaxStringThree(string firstValue, string secondValue, string thirdValue)
-        {
-            if (firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) >= 0)
-            {
-                return firstValue;
-            }
-            else if (secondValue.CompareTo(firstValue) >= 0 && secondValue.CompareTo(thirdValue) >= 0)
-            {
-                return secondValue;
-            }
-            else if (thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) >= 0)
+            if (thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) >= 0)
             {
                 return thirdValue;
             }

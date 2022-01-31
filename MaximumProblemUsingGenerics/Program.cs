@@ -15,9 +15,9 @@ namespace MaximumProblemUsingGenerics
 
             while(true)
             {
-                Console.WriteLine("1: Find Max Of Three Int Number"+
-                             "\n2: Find Max Of Three Float Number"+
-                             "\n3: Find Max Of Three String Input"+
+                Console.WriteLine("1: Find Max Of Three Int Number Using Generics"+
+                             "\n2: Find Max Of Three Float Number Using Generics"+
+                             "\n3: Find Max Of Three String Input Using Generics"+
                              "\n4: Exit"
                             );
                 Console.Write("Enter A Choice From Above : ");
@@ -25,23 +25,23 @@ namespace MaximumProblemUsingGenerics
                 switch (choice)
                 {
                     case 1:
-                        //Finding maximum value out of three integer(UC1)
+                        //Finding maximum value out of three integer using generics(Ref1)
                         int fIntValue = 50, sIntValue = 20, tIntValue = 10;
-                        int resIntNum = MaxNumber.MaxIntNumThree(fIntValue, sIntValue, tIntValue);
+                        int resIntNum = MaxNumber.ShowMaxValue<int>(fIntValue, sIntValue, tIntValue);
                         Console.WriteLine("{0} is maximum value from first: {1} second: {2} third: {3}", resIntNum, fIntValue, sIntValue, tIntValue);
                         Console.ReadLine();
                         break;
                     case 2:
-                        //Finding maximum value out of three float numbers(UC2)
+                        //Finding maximum value out of three float numbers using generics(Ref1)
                         float fstFtVal = 2.2f, secFtVal = 3.4f, tFtVal = 3.2f;
-                        float resFtNum = MaxNumber.MaxFloatNumThree(fstFtVal, secFtVal, tFtVal);
+                        float resFtNum = MaxNumber.ShowMaxValue<float>(fstFtVal, secFtVal, tFtVal); 
                         Console.WriteLine("{0} is maximum value from first: {1} second: {2} third: {3}", resFtNum, fstFtVal, secFtVal, tFtVal);
                         Console.ReadLine();
                         break;
                     case 3:
-                        //Finding maximum value out of three string input(UC3)
+                        //Finding maximum value out of three string input using generics(Ref1)
                         string fstStr = "Airport", secStr = "Airplane", thirdStr = "Airspace";
-                        string resStr = MaxNumber.MaxStringThree(fstStr, secStr, thirdStr);
+                        string resStr = MaxNumber.ShowMaxValue<string>(fstStr, secStr, thirdStr);
                         Console.WriteLine("{0} is maximum value from first: {1} second: {2} third: {3}", resStr, fstStr, secStr, thirdStr);
                         Console.ReadLine();
                         break;
