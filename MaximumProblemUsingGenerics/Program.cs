@@ -25,24 +25,24 @@ namespace MaximumProblemUsingGenerics
                 switch (choice)
                 {
                     case 1:
-                        //Finding maximum integer value using generics(UC4)
+                        //Finding maximum integer value using generics and printing using genric method(UC4 & UC5)
                         int[] intArray = { 34, 23, 40, 36 };
-                        int resIntNum = new MaxNumber<int>(intArray).ShowMax();
-                        Console.WriteLine("Maximum value from given number is : {0}", resIntNum);
+                        MaxNumber<int> resIntNum = new MaxNumber<int>(intArray);
+                        resIntNum.PrintMaxValue();
                         Console.ReadLine();
                         break;
                     case 2:
-                        //Finding maximum float value using generics(UC4)
+                        //Finding maximum float value using genericsand printing using genric method(UC4 & UC5)
                         float[] floatArray = { 12.5f, 45.65f, 987.45f, 658.78f };
-                        float resFtNum = new MaxNumber<float>(floatArray).ShowMax();
-                        Console.WriteLine("Maximum value from given float number is : {0} ", resFtNum);
+                        MaxNumber<float> resFtNum = new MaxNumber<float>(floatArray);
+                        resFtNum.PrintMaxValue();
                         Console.ReadLine();
                         break;
                     case 3:
-                        //Finding maximum string value using generics(UC4)
+                        //Finding maximum string value using genericsand printing using genric method(UC4 & UC5)
                         string[] stringArray = { "Airplane", "Airport", "Airspace", "AirCargo" };
-                        string resStr = new MaxNumber<string>(stringArray).ShowMax();
-                        Console.WriteLine("Maximum value from given string is : {0} ", resStr);
+                        MaxNumber<string> resStr = new MaxNumber<string>(stringArray);
+                        resStr.PrintMaxValue();
                         Console.ReadLine();
                         break;
                     case 4:

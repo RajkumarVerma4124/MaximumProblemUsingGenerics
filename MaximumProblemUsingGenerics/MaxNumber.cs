@@ -33,6 +33,13 @@ namespace MaximumProblemUsingGenerics
             return sortedValues.ElementAt(0);
         }
 
+        //Generic method to print max value (UC5)
+        public void PrintMaxValue()
+        {
+            var maxValue = MaxValue(this.GenValue);
+            Console.WriteLine("Maximum value from given number is : {0}", maxValue);
+        }
+
         //Extend the max method to take more then three parameters(UC4)
         public T ShowMax()
         {
