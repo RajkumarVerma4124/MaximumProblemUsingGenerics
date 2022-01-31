@@ -6,10 +6,22 @@ using System.Threading.Tasks;
 
 namespace MaximumProblemUsingGenerics
 {
-    public class MaxNumber
+    //Refactored the code to create generic class to take three variabes of generic type(Ref2)
+    public class MaxNumber<T> where T : IComparable
     {
+        //Three generic variables
+        public T firstValue, secondValue, thirdValue;
+
+        //Using constructor to initialize those variables 
+        public MaxNumber(T firstValue, T secondValue, T thirdValue)
+        {
+            this.firstValue = firstValue;
+            this.secondValue = secondValue;
+            this.thirdValue = thirdValue;
+        }
+
         //Refactored all the 3 method to one generic method and finding the maximum values(Ref1)
-        public static T ShowMaxValue<T>(T firstValue, T secondValue, T thirdValue) where T : IComparable
+        public T ShowMaxValue(T firstValue, T secondValue, T thirdValue)
         {
             if (firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) >= 0)
             {
