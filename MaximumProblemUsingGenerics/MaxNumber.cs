@@ -6,44 +6,38 @@ using System.Threading.Tasks;
 
 namespace MaximumProblemUsingGenerics
 {
-    //Refactored the code to create generic class to take three variabes of generic type(Ref2)
+    //Generic class to find maximum values
     public class MaxNumber<T> where T : IComparable
     {
-        //Three generic variables
-        public T firstValue, secondValue, thirdValue;
+        //Generic array
+        public T[] GenValue;
 
         //Using constructor to initialize those variables 
-        public MaxNumber(T firstValue, T secondValue, T thirdValue)
+        public MaxNumber(T[] GenValue)
         {
-            this.firstValue = firstValue;
-            this.secondValue = secondValue;
-            this.thirdValue = thirdValue;
+            this.GenValue = GenValue;
+        }
+        
+        // Sorting the value in ascending order(UC4)
+        public T[] Sort(T[] GenValue)
+        {
+            Array.Sort(GenValue);
+            Array.Reverse(GenValue);
+            return GenValue;
         }
 
-        //Refactored all the 3 method to one generic method and finding the maximum values(Ref1)
-        private static T ShowMaxValue(T firstValue, T secondValue, T thirdValue)
+        //Generic method to find max value (UC4)
+        public T MaxValue(T[] GenValue)
         {
-            if (firstValue.CompareTo(secondValue) >= 0 && firstValue.CompareTo(thirdValue) >= 0)
-            {
-                return firstValue;
-            }
-            if (secondValue.CompareTo(thirdValue) >= 0 && secondValue.CompareTo(firstValue) >= 0)
-            {
-                return secondValue;
-            }
-            if (thirdValue.CompareTo(firstValue) >= 0 && thirdValue.CompareTo(secondValue) >= 0)
-            {
-                return thirdValue;
-            }
-            return default;
+            var sortedValues = Sort(GenValue);
+            return sortedValues.ElementAt(0);
         }
 
-        //Generic method to call max method which take three parameters
+        //Extend the max method to take more then three parameters(UC4)
         public T ShowMax()
         {
-            T maxValue = MaxNumber<T>.ShowMaxValue(this.firstValue, this.secondValue, this.thirdValue);
+            var maxValue = MaxValue(this.GenValue);
             return maxValue;
         }
-
     }
 }
