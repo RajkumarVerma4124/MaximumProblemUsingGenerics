@@ -17,7 +17,8 @@ namespace MaximumProblemUsingGenerics
             {
                 Console.WriteLine("1: Find Max Of Three Int Number"+
                              "\n2: Find Max Of Three Float Number"+
-                             "\n3: Exit"
+                             "\n3: Find Max Of Three String Input"+
+                             "\n4: Exit"
                             );
                 Console.Write("Enter A Choice From Above : ");
                 int choice = int.Parse(Console.ReadLine());
@@ -38,6 +39,13 @@ namespace MaximumProblemUsingGenerics
                         Console.ReadLine();
                         break;
                     case 3:
+                        //Finding maximum value out of three string input(UC3)
+                        string fstStr = "Airport", secStr = "Airplane", thirdStr = "Airspace";
+                        string resStr = MaxNumber.MaxStringThree(fstStr, secStr, thirdStr);
+                        Console.WriteLine("{0} is maximum value from first: {1} second: {2} third: {3}", resStr, fstStr, secStr, thirdStr);
+                        Console.ReadLine();
+                        break;
+                    case 4:
                         Environment.Exit(0);
                         break;
                     default:
